@@ -1508,6 +1508,7 @@ function sendEmail() {
 	let phone = document.getElementById('phone').value;
 	Email.send({
 	Host: "smtp-relay.sendinblue.com",
+	Port: "587",
 	Username : "balabm1999@gmail.com",
 	Password : "FnX7gsEK69kpbJvS",
 	To : "deivik2002@gmail.com",
