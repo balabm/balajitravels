@@ -1494,3 +1494,28 @@ $document.ready(function () {
 	}
 
 });
+
+
+function sendEmail() {
+
+	let fromcity = document.getElementById('fromcity').value;
+	let tocity = document.getElementById('tocity').value;
+	let noofdays = document.getElementById('noofdays').value;
+	let date = document.getElementById('dateForm').value;
+	let adultscount = document.getElementById('adultscount').value;
+	let childcount = document.getElementById('childcount').value;
+	let email = document.getElementById('email').value;
+	let phone = document.getElementById('phone').value;
+	Email.send({
+	Host: "smtp-relay.sendinblue.com",
+	Username : "balabm1999@gmail.com",
+	Password : "FnX7gsEK69kpbJvS",
+	To : "deivik2002@gmail.com",
+	From : "balabm1999@gmail.com",
+	Subject : "Enquiry",
+	Body : " From city =" + fromcity + ", To City =" + tocity + " Date =" + date + " No of Days =" + noofdays + " No of Adults =" + adultscount + 
+	" No of Children =" + childcount + "Customer Email =" + email + " Customer Mobile =" + phone ,
+	}).then(
+		message => alert("We will contact you shortly")
+	);
+}
