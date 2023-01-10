@@ -16,7 +16,9 @@
   <!--[if lt IE 10]>
     <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
     <script src="js/html5shiv.min.js"> </script>
+    
 		<![endif]-->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>  
 </head>
 
 <body>
@@ -208,13 +210,13 @@
                     <div class="col-sm-12">
                       <label class="form-label-outside">From</label>
                       <div class="form-wrap form-wrap-inline">
-                        <input class="form-input" id="form-1-last-name" type="text" name="last-name" placeholder="From City" data-constraints="@Required"/>
+                        <input class="form-input" id="fromcity" type="text" name="last-name" placeholder="From City" data-constraints="@Required"/>
                       </div>
                     </div>
                     <div class="col-sm-12">
                       <label class="form-label-outside">To</label>
                       <div class="form-wrap form-wrap-inline">
-                        <input class="form-input" id="form-1-last-name" type="text" name="last-name" placeholder="To City" data-constraints="@Required"/>
+                        <input class="form-input" id="tocity" type="text" name="last-name" placeholder="To City" data-constraints="@Required"/>
                       </div>
                     </div>
                     <div class="col-sm-12 col-lg-6">
@@ -233,7 +235,7 @@
                       <label class="form-label-outside">Duration</label>
                       <div class="form-wrap form-wrap-validation">
                         <!-- Select 2-->
-                        <select class="form-input select-filter" data-placeholder="All"
+                        <select class="form-input select-filter" id="noofdays" data-placeholder="All"
                           data-minimum-results-for-search="Infinity" name="city">
                           <option value="1">Any length</option>
                           <option value="2">2 days</option>
@@ -245,20 +247,32 @@
                     <div class="col-lg-6">
                       <label class="form-label-outside">Adults</label>
                       <div class="form-wrap form-wrap-modern">
-                        <input class="form-input input-append" id="form-element-stepper" type="number" min="0" max="300"
+                        <input class="form-input input-append" id="adultscount" type="number" min="0" max="300"
                           value="2">
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <label class="form-label-outside">Children</label>
                       <div class="form-wrap form-wrap-modern">
-                        <input class="form-input input-append" id="form-element-stepper-1" type="number" min="0"
+                        <input class="form-input input-append" id="childcount" type="number" min="0"
                           max="300" value="0">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <label class="form-label-outside">Email</label>
+                      <div class="form-wrap form-wrap-inline">
+                        <input class="form-input" id="email" type="email" name="last-name" placeholder="E-mail" data-constraints="@Required"/>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <label class="form-label-outside">Phone</label>
+                      <div class="form-wrap form-wrap-inline">
+                        <input class="form-input" id="phone" type="text" name="last-name" placeholder="Phone Number" data-constraints="@Required"/>
                       </div>
                     </div>
                   </div>
                   <div class="form-wrap form-button">
-                    <button class="button button-block button-secondary" type="submit">Enquire Now</button>
+                    <button class="button button-block button-secondary"  onclick="sendEmail()" >Enquire Now </button>
                   </div>
                 </form>
               </div>
